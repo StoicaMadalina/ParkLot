@@ -48,4 +48,14 @@ public class UserBean {
         }
         return detailsList;
     }
+    public void createUser(String username, String email, String passwordSha256, String position) {
+
+        User user = new User();
+        user.setUsername(username);
+        user.setEmail(email);
+        user.setPassword(passwordSha256);
+        user.setPosition(position);
+
+        em.persist(user);
+    }
 }
