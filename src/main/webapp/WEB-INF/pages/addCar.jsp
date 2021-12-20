@@ -1,9 +1,3 @@
-<%-- 
-    Document   : addCar
-    Created on : Nov 27, 2021, 6:05:47 PM
-    Author     : kicky
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
