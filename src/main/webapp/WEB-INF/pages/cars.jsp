@@ -11,8 +11,15 @@
             <div class="row">
                 <div class="col-md"><input type="checkbox" name="car_ids" value = ${car.id}/></div>
                 <div class="col-md-3">${car.licensePlate}</div>
-                <div class="col-md-3">${car.parkingSpot}</div>
-                <div class="col-md-3">${car.username}</div>
+                <div class="col-md-2">${car.parkingSpot}</div>
+                <div class="col-md-2">${car.username}</div>
+                <div class="col-md-1">
+                    <img src="${pageContext.request.contextPath}/Photos?id=${car.id}" width="48px">
+                </div>
+                <div class="col-md-1">
+                    <a class="btn btn-secondary" href="${pageContext.request.contextPath}/AddPhoto?id=${car.id}"
+                       role="button">Add photo</a>
+                </div>
                 <div class="col-md-2">
                     <a class="btn btn-secondary btn-lg" href="${pageContext.request.contextPath}/EditCar?id=${car.id}" role="button">Edit Car</a>
                 </div>

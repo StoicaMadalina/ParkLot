@@ -4,15 +4,8 @@
  */
 package com.park.parkinglot.entity;
 
+import javax.persistence.*;
 import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 @Entity
 @Table(name = "CARS")
@@ -30,6 +23,9 @@ public class Car implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "USER_KEY")
     private User user;
+
+    @OneToOne(mappedBy = "car", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Photo photo;
 
     public Integer getId() {
         return id;
@@ -61,5 +57,13 @@ public class Car implements Serializable {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public void setPhoto(Photo photo) {
+        this.photo = photo;
+    }
+
+    public Photo getPhoto() {
+        return photo;
     }
 }
